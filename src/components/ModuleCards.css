@@ -1,0 +1,9 @@
+.card{
+    margin: 10px 10px 10px 10px;
+}
+.form{
+    background-color: rgb(190, 233, 233);
+    min-width: 500px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+}
