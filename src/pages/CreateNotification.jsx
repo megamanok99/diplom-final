@@ -6,7 +6,7 @@ import { saveAs } from 'file-saver';
 var FileSaver = require('file-saver');
 
 
-function CreateUD() {
+function CreateNotification() {
  
   const [name,setName]=React.useState('man');
   const [t1,setT1]=React.useState('');
@@ -36,7 +36,7 @@ function CreateUD() {
   return (
     <div>
       <Card>
-        <Card.Header as="h5">Модуль формирования Удостоверяющего Листа</Card.Header>
+        <Card.Header as="h5">Модуль формирования извещения</Card.Header>
         <Card.Body>
           <div>{t1}</div>
           <Card.Title>Начало работы</Card.Title>
@@ -108,4 +108,4 @@ function CreateUD() {
     </div>
   );
 }
-export default CreateUD;
+export default CreateNotification;

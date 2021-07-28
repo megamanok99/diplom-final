@@ -1,12 +1,12 @@
-import { Card, Button, Row, Col, Alert } from 'react-bootstrap';
-import img from '../img/module.png';
+import { Card } from 'react-bootstrap';
+
 import './ModuleCards.css';
 import { Link } from 'react-router-dom';
 
-function ModuleCards({ name, id, text, link }) {
+function ModuleCards({ name, id, text, link,img }) {
   return (
-    <div key={id}>
-      <Card style={{ width: '18rem' }}>
+    <div key={id} >
+      <Card style={{ width: '18rem' }} className="lettrS">
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

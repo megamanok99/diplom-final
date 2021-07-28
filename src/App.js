@@ -1,4 +1,6 @@
-import Button from 'react-bootstrap/Button';
+/* eslint-disable no-redeclare */
+/* eslint-disable no-dupe-args */
+
 import {Container,Row,Col} from 'react-bootstrap';
 import MainPage from './pages/MainPage';
 import SelectFootprint from './pages/SelectFootprint';
@@ -9,14 +11,19 @@ import Footer from './components/Footer';
 import ModuleParseWord from './pages/ModuleParseWord';
 import AskQuestion from "./pages/AskQuestion";
 import CreateUD from "./pages/CreateUD";
+import PcbParse from "./pages/PcbParse";
+import CreateNotification from "./pages/CreateNotification";
 import './App.css';
 import data from './data.json';
 
 
+
 function App() {
+  
   return (
     
     <div className="background-image">
+      
       <Container>
     <Row className="justify-content-md-center row-center" >
       <Col>
@@ -34,6 +41,13 @@ function App() {
       </Route>
       <Route  path='/CreateUD'>
         <CreateUD/>
+      </Route>
+      <Route  path='/CreateNotification'>
+        <CreateNotification/>
+      </Route>
+
+      <Route  path='/PcbParse'>
+        <PcbParse/>
       </Route>
 
       <Route  path='/askQuestion'>

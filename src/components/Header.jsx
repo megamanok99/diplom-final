@@ -1,18 +1,21 @@
-import { Navbar, Form, Nav, NavDropdown, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Form, Nav, NavDropdown, Button,Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Header.css';
 import ModalWindow from './ModalWindow';
-import { Row, Col } from 'react-bootstrap';
+import {Image} from 'react-bootstrap';
+import logotype from '../img/logotype.png';
 
 function Header({ data }) {
   const [modalShow, setModalShow] = React.useState(false);
-
+  const [entrance,setEntrance]=React.useState(localStorage.getItem('surName'));
+  
+ 
   return (
     <Navbar bg="light" expand="lg" className="header">
       <Navbar.Brand>
         <Link to="/" className="nav-link ">
-          Оформление КД
+        <Image src={logotype}  className="logo" />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,13 +38,18 @@ function Header({ data }) {
               Помощь
             </Link>
           </NavDropdown>
+        
         </Nav>
         <Form inline>
-          <span className="align-middle  field-name">Войдите в систему</span>
+          <span className="align-middle  field-name">  {entrance}  </span>
 
-          <Button variant="outline-primary" onClick={() => setModalShow(true)}>
+          {!localStorage.name ?
+            <Button variant="outline-primary" onClick={() => setModalShow(true)}>
             Войти
+          </Button> :  <Button variant="outline-primary" onClick={() => setModalShow(true)}>
+            Изменить данные
           </Button>
+          }
 
           <ModalWindow show={modalShow} onHide={() => setModalShow(false)} />
         </Form>
